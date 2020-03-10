@@ -10,4 +10,4 @@
     tower_username: "{{ user_name }}"
     tower_password: "{{ password }}"
     state: present
-    tower_config_file: "~/.tower_cli.cfg"
+    tower_config_file: "{{ tower_cli_location }}"
