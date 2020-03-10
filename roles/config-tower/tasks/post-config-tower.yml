@@ -1,7 +1,11 @@
 - name: Create Homework Assignment project
 # Use tower module or tower-cli to create Ansible Tower project. Name of the project is specifed in ./vars/main.yml
-  include_tasks:
-    name: create_project.yaml
+  debug:
+    msg: "Starting project create -- include_tasks: create_project.yaml"
+  include_tasks: create_project.yaml
+
+  debug:
+    msg: successfully included create_project.yaml
 
 - name: Machine Credential (mispelled credential - tsk tsk) to connect to workstation using openstack.pub
   tower_credential:
