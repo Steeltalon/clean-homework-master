@@ -6,6 +6,8 @@
     scm_branch: "{{ scm_branch }}"
     scm_update_on_launch: True
     scm_update_cache_timeout: 60
-    custom_virtualenv: "/var/lib/awx/venv/ansible-2.2"
+    tower_host: "{{ tower_host_info }}"
+    tower_username: "{{ user_name }}"
+    tower_password: "{{ password }}"
     state: present
     tower_config_file: "~/.tower_cli.cfg"
