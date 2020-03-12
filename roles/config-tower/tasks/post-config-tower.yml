@@ -4,17 +4,19 @@
     tower-cli project create -n "{{ proj_name }}" -d "{{ proj_desc }}" --organization "{{ org_name }}" --scm-type git --scm-url "{{ scm_url }}" --scm-branch "{{ scm_branch }}" -u "{{ tower_user_name }}" -p "{{ tower_password }}" -h "{{ tower_host_info }}" --wait
 
 - name: Machine Credential (mispelled credential - tsk tsk) to connect to workstation using openstack.pub
-  tower_credential:
-    name: Connect_to_workstation
-    organization: Default
-    state: present
-    kind: ssh
-    tower_config_file: /root/.tower_cli.cfg
-    tower_host: tower1.{{tower_GUID}}.example.opentlc.com
-    tower_username: admin
-    tower_password: r3dh4t1!
-    ssh_key_data: "{{ lookup('file', '/root/.ssh/openstack.pem') }}"
-    username: cloud-user
+  command:
+    tower-cli credential create -n "{{ tower_credential_name }}" --organization "{{ tower_credential_org }}" --credential-type "{{ tower_credential_type }}" -h "{{ tower_host }}" -u "{{ tower_username }}" -p "{{ tower_password }}" --inputs='{ "username": "{{ ssh_cred_name }}", "ssh_key_data": "{ /root/.ssh/openstack.pem }" }'
+  #tower_credential:
+  #  name: Connect_to_workstation
+  #  organization: Default
+  #  state: present
+  #  kind: ssh
+  #  tower_config_file: /root/.tower_cli.cfg
+  #  tower_host: tower1.{{tower_GUID}}.example.opentlc.com
+  #  tower_username: admin
+  #  tower_password: r3dh4t1!
+  #  ssh_key_data: "{{ lookup('file', '/root/.ssh/openstack.pem') }}"
+  #  username: cloud-user
 
 - name: Create Inventory
   command: |

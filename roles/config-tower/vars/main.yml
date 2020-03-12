@@ -44,3 +44,9 @@ job_template_name_3tier_app_aws: "3 tier app on Prod"
 aws_cred_name: "Creds for AWS instances"
 job_template_smoke_aws: "Smoke test Prod env"
 aws_smoke_app_playbook: site-smoketest-aws.yml
+tower_credential_name: Connect_to_workstation
+tower_credential_org: Default
+tower_credential_state: present
+tower_credential_type: ssh
+tower_credential_config: /root/.tower_cli.cfg
+tower_credential_openstack_key: /root/.ssh/openstack.pem
