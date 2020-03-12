@@ -46,7 +46,8 @@ job_template_smoke_aws: "Smoke test Prod env"
 aws_smoke_app_playbook: site-smoketest-aws.yml
 tower_credential_name: Connect_to_workstation
 tower_credential_org: Default
+tower_org_description: "Default organization"
 tower_credential_state: present
 tower_credential_type: Machine
-tower_credential_config: /root/.tower_cli.cfg
+tower_cli_config: /root/.tower_cli.cfg
 tower_credential_openstack_key: /root/.ssh/openstack.pem
