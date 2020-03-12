@@ -10,7 +10,7 @@
     name: "Default"
     description: "Default organization"
     state: present
-    tower_config_file: ""~/.tower-cli-cfg"
+    tower_config_file: "~/.tower-cli-cfg"
 
 - name: Create Homework Assignment project
 # Use tower module or tower-cli to create Ansible Tower project. Name of the project is specifed in ./vars/main.yml
