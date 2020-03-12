@@ -5,7 +5,7 @@
 
 - name: Machine Credential (mispelled credential - tsk tsk) to connect to workstation using openstack.pub
   command: |
-    tower-cli credential create -n "{{ tower_credential_name }}" --organization "{{ tower_credential_org }}" --credential-type "{{ tower_credential_type }}" -h "{{ tower_host }}" -u "{{ tower_username }}" -p "{{ tower_password }}" --inputs='{ "username": "{{ ssh_cred_name }}" "ssh_key_data": "{{ /root/.ssh/openstack.pem }}" }'
+    tower-cli credential create -n "{{ tower_credential_name }}" --organization "{{ tower_credential_org }}" --credential-type "{{ tower_credential_type }}" -h "{{ tower_host }}" -u "{{ tower_username }}" -p "{{ tower_password }}" --inputs='{ "username": "{{ ssh_cred_name }}", "ssh_key_data": "{{ /root/.ssh/openstack.pem }}" }'
   #tower_credential:
   #  name: Connect_to_workstation
   #  organization: Default
