@@ -21,7 +21,7 @@
     #tower-cli credential create -n "{{ tower_credential_name }}" --organization "{{ tower_credential_org }}" --credential-type "{{ tower_credential_type }}" -h "{{ tower_host_info }}" -u "{{ tower_user_name }}" -p "{{ tower_password }}" --inputs='{ "username": "{{ ssh_cred_name }}", "ssh_key_data": "{{ tower_credential_openstack_key }}" }'
   tower_credential:
     name: "{{ tower_cred_name }}"
-    organization: "Default"
+    organization: Default
     state: "{{ tower_credential_state }}"
     kind: ssh
     #are the tower login details even relevant for logging into the OSP?
