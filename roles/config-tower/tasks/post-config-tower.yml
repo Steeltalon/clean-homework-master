@@ -35,9 +35,8 @@
     username: "{{ user_cred_name }}"
   register: result
 
-- assert:
-    that:
-      - result is changed
+- debug:
+  - msg: result
 
 - name: Create Inventory
   command: |
