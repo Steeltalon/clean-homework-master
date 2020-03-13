@@ -30,9 +30,9 @@
     tower_username: admin
     tower_password: r3dh4t1!
     #ssh_key_data: "{{ lookup('file', '{{ tower_credential_openstack_key }}') }}"
-    user: cloud-user
+    #user: cloud-user
     #username is for AWS.  Not clear if that's what's needed here
-    #username: "{{ user_cred_name }}"
+    username: cloud-user
   register: result
 
 - assert:
