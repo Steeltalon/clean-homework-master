@@ -9,7 +9,7 @@ tower_user_name: admin
 tower_password: r3dh4t1!
 tower_cli_location: ~/.tower_cli.cfg
 tower_host_info: tower1.{{tower_GUID}}.example.opentlc.com
-ssh_cred_name: "Connect_to_workstation"
+tower_cred_name: "Connect_to_workstation"
 user_cred_name: "cloud-user"
 user_cred_path: "/root/.ssh/openstack.pem"
 static_inventory_name: scm_inventory

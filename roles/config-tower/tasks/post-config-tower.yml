@@ -20,14 +20,15 @@
   #command: |
     #tower-cli credential create -n "{{ tower_credential_name }}" --organization "{{ tower_credential_org }}" --credential-type "{{ tower_credential_type }}" -h "{{ tower_host_info }}" -u "{{ tower_user_name }}" -p "{{ tower_password }}" --inputs='{ "username": "{{ ssh_cred_name }}", "ssh_key_data": "{{ tower_credential_openstack_key }}" }'
   tower_credential:
-    name: "{{ ssh_cred_name }}"
+    name: "{{ tower_cred_name }}"
     organization: "Default"
     state: "{{ tower_credential_state }}"
     kind: ssh
+    #are the tower login details even relevant for logging into the OSP?
     #tower_config_file: /root/.tower_cli.cfg
-    tower_host: tower1.{{tower_GUID}}.example.opentlc.com
-    tower_username: admin
-    tower_password: r3dh4t1!
+    #tower_host: tower1.{{tower_GUID}}.example.opentlc.com
+    #tower_username: admin
+    #tower_password: r3dh4t1!
     ssh_key_data: "{{ lookup('file', '{{ tower_credential_openstack_key }}') }}"
     user: "{{ user_cred_name }}"
     #username is for AWS.  Not clear if that's what's needed here
