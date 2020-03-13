@@ -1,6 +1,18 @@
 - name: Job template for OSP Instances
-  command: |
-    tower-cli job_template create --name "{{job_template_name_osp_instances}}" --job-type run --inventory "{{static_inventory_name}}" --project "{{proj_name}}" --playbook "{{osp_instances_playbook}}" --credential "{{tower_cred_name}}"
+  #command: |
+    #tower-cli job_template create --name "{{job_template_name_osp_instances}}"
+    #--job-type run --inventory "{{static_inventory_name}}"
+    #--project "{{proj_name}}"
+    #--playbook "{{osp_instances_playbook}}"
+    #--credential "{{tower_cred_name}}"
+  tower_job_template:
+    name: "{{ job_template_name_osp_instances }}"
+    job_type: "{{ osp_job_type }}"
+    inventory: "{{ static_inventory_name }}"
+    playbook: "{{ osp_instances_playbook }}"
+    project: "{{ proj_name }}"
+    credential: "{{ tower_cred_name }}"
+
 
 - name: Associate IG to OSP instances job template
   command: |
@@ -33,7 +45,7 @@
   command: |
     tower-cli job_template create --name "{{job_template_smoke_osp}}" --job-type run --inventory "{{static_inventory_name}}" --project "{{proj_name}}" --playbook "{{osp_smoke_playbook}}" --credential "{{tower_cred_name}}"
 
-- name: Associate IG to Smoke test job template 
+- name: Associate IG to Smoke test job template
   command: |
     tower-cli job_template associate_ig --job_template "{{job_template_smoke_osp}}" --instance_group "{{instance_group_name}}"
 

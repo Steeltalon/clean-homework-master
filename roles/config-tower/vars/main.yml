@@ -53,3 +53,5 @@ tower_credential_state: present
 tower_credential_type: Machine
 tower_cli_config: /root/.tower_cli.cfg
 tower_credential_openstack_key: /root/.ssh/openstack.pem
+
+osp_job_type: run
