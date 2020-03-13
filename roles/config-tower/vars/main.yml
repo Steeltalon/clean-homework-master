@@ -5,6 +5,7 @@ scm_branch: master
 scm_url: "{{ github_repo }}"
 proj_desc: "Create Homework Project"
 proj_name: "Homework Assignment"
+credential_kind: ssh
 tower_user_name: admin
 tower_password: r3dh4t1!
 tower_cli_location: ~/.tower_cli.cfg
@@ -47,6 +48,7 @@ aws_smoke_app_playbook: site-smoketest-aws.yml
 tower_credential_name: Connect_to_workstation
 tower_credential_org: Default
 tower_org_description: "Default organization"
+tower_org_state: present
 tower_credential_state: present
 tower_credential_type: Machine
 tower_cli_config: /root/.tower_cli.cfg

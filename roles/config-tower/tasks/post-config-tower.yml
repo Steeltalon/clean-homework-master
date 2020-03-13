@@ -7,9 +7,9 @@
 
 - name: Create Default Organization
   tower_organization:
-    name: "Default"
-    description: "Default organization"
-    state: present
+    name: "{{ org_name }}"
+    description: "{{ tower_org_description }}"
+    state: "{{ tower_org_state }}"
 
 - name: Create Homework Assignment project
 # Use tower module or tower-cli to create Ansible Tower project. Name of the project is specifed in ./vars/main.yml
@@ -21,18 +21,18 @@
     #tower-cli credential create -n "{{ tower_credential_name }}" --organization "{{ tower_credential_org }}" --credential-type "{{ tower_credential_type }}" -h "{{ tower_host_info }}" -u "{{ tower_user_name }}" -p "{{ tower_password }}" --inputs='{ "username": "{{ ssh_cred_name }}", "ssh_key_data": "{{ tower_credential_openstack_key }}" }'
   tower_credential:
     name: "{{ tower_cred_name }}"
-    organization: Default
+    organization: "{{ org_name }}"
     #state: "{{ tower_credential_state }}"
-    kind: ssh
+    kind: "{{ credential_kind }}"
     #are the tower login details even relevant for logging into the OSP?
     #tower_config_file: /root/.tower_cli.cfg
-    tower_host: tower1.{{tower_GUID}}.example.opentlc.com
-    tower_username: admin
-    tower_password: r3dh4t1!
+    tower_host: "{{ tower_host_info }}"
+    tower_username: "{{ tower_user_name }}"
+    tower_password: "{{ tower_password }}"
     #ssh_key_data: "{{ lookup('file', '{{ tower_credential_openstack_key }}') }}"
     #user: cloud-user
     #username is for AWS.  Not clear if that's what's needed here
-    username: cloud-user
+    username: "{{ user_cred_name }}"
   register: result
 
 - assert:
