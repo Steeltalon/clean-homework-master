@@ -35,9 +35,9 @@
     username: "{{ user_cred_name }}"
   register: result
 
-- debug:
-  - var: result
-  - verbosity: 1 
+  debug:
+    var: result
+    verbosity: 1
 
 
 - name: Create Inventory
