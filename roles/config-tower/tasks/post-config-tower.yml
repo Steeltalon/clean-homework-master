@@ -36,7 +36,9 @@
   register: result
 
 - debug:
-  - msg: result
+  - var: result
+  - verbosity: 1 
+
 
 - name: Create Inventory
   command: |
