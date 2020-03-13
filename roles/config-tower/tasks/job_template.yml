@@ -15,7 +15,7 @@
 
 
 - name: Associate IG to OSP instances job template
-  command: <-
+  command: >
     tower-cli
       --job_template "{{job_template_name_osp_instances}}"
       --associate_ig "{{instance_group_name}}"
