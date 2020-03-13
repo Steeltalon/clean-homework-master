@@ -25,10 +25,10 @@
     #state: "{{ tower_credential_state }}"
     kind: ssh
     #are the tower login details even relevant for logging into the OSP?
-    tower_config_file: /root/.tower_cli.cfg
-    #tower_host: tower1.{{tower_GUID}}.example.opentlc.com
-    #tower_username: admin
-    #tower_password: r3dh4t1!
+    #tower_config_file: /root/.tower_cli.cfg
+    tower_host: tower1.{{tower_GUID}}.example.opentlc.com
+    tower_username: admin
+    tower_password: r3dh4t1!
     #ssh_key_data: "{{ lookup('file', '{{ tower_credential_openstack_key }}') }}"
     #user: "{{ user_cred_name }}"
     #username is for AWS.  Not clear if that's what's needed here
